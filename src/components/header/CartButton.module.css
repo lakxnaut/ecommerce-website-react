@@ -4,10 +4,14 @@
 
 .button {
   margin-right: 4px;
-  border: 2px solid #56ccf2;
+
   padding: 4px 12px;
   color: white;
   border-radius: 12px;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: #d01f1f;
 }
 .badge {
   color: white;

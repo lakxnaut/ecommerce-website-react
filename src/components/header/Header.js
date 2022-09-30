@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import CartButton from './CartButton'
 import classes from './Header.module.css'
 
-const Header = () => {
+const Header = (props) => {
     return (
         <div className={classes.allheader}>
             <div className={classes.header}>
@@ -12,7 +12,7 @@ const Header = () => {
                     <h3>About</h3>
                 </div>
 
-                <CartButton />
+                <CartButton onCartClickHandler={props.onCartClickHandler} />
 
 
 

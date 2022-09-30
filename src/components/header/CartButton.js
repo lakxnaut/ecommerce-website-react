@@ -1,12 +1,18 @@
 import React from 'react'
 import classes from './CartButton.module.css'
 
-const CartButton = () => {
+const CartButton = (props) => {
+
+    function showCartHandler() {
+        props.onCartClickHandler(true)
+
+    }
+
     return (
         <div className={classes.cartbutton} >
-            <div className={classes.button} >
-                Cart
-            </div>
+
+            <button onClick={showCartHandler} className={classes.button} >
+                Cart</button>
             <div className={classes.badge}>
                 0
             </div>

@@ -1,8 +1,11 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
+import Cart from './components/Cart/Cart'
 import Header from './components/header/Header'
 import AllProducts from './components/Products/AllProducts'
 
 const App = () => {
+
+  const [isCartShown, setIsCartShown] = useState(false)
   const productsArr = [
 
     {
@@ -46,9 +49,15 @@ const App = () => {
     }
 
   ]
+
+  function cartToggle(bool) {
+    setIsCartShown(bool)
+  }
   return (
     <Fragment>
-      <Header />
+      {isCartShown && <Cart />}
+
+      <Header onCartClickHandler={cartToggle} />
       <AllProducts allproducts={productsArr} />
     </Fragment>
   )
