@@ -1,8 +1,14 @@
 import React, { Fragment, useState } from 'react'
 import Cart from './components/Cart/Cart'
+import Footer from './components/Footer/Footer'
 import Header from './components/header/Header'
 import AllProducts from './components/Products/AllProducts'
 import CartProvider from './components/store/CartProvider'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './components/Home/Home'
+import About from './components/About/About'
+
+
 
 const App = () => {
 
@@ -60,10 +66,20 @@ const App = () => {
   }
   return (
     <CartProvider>
-      {isCartShown && <Cart onCartClickHandler={cartToggle} />}
 
-      <Header onCartClickHandler={cartToggle} />
-      <AllProducts allproducts={productsArr} />
+      {isCartShown && <Cart onCartClickHandler={cartToggle} />}
+      <Router>
+
+        <Header onCartClickHandler={cartToggle} />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/store" element={<AllProducts allproducts={productsArr} onCartClickHandler={cartToggle} />} />
+        </Routes>
+      </Router>
+
+      <Footer />
     </CartProvider>
   )
 }

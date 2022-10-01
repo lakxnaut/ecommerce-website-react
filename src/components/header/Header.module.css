@@ -21,6 +21,16 @@
 
   color: white;
 }
+.header-links a {
+  border: none;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.header-links a:hover {
+  cursor: pointer;
+  color: rgb(206, 185, 185);
+}
 
 .generics {
   margin-top: 40px;
