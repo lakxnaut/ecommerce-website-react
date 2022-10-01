@@ -9,6 +9,9 @@
 .crossbutton {
   text-align: right;
 }
+.crossbutton:hover {
+  cursor: pointer;
+}
 .cartname {
   text-align: center;
   font-size: 25px;
@@ -55,7 +58,7 @@
   align-items: center;
 }
 
-button {
+.removebutton {
   margin-left: 10px;
   background-color: rgb(231, 76, 76);
   border: none;
@@ -66,4 +69,9 @@ button {
   width: 35%;
   display: flex;
   align-items: center;
+}
+.total {
+  font-weight: bold;
+  font-size: 22px;
+  text-align: right;
 }

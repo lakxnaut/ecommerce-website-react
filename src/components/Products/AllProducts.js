@@ -4,10 +4,15 @@ import Product from './Product'
 
 const AllProducts = (props) => {
     return (
-        <div>
-            music
+        <div className={classes.allproducts}>
+            <div className={classes.title}>MUSIC</div>
+            <div className={classes.productcontainer}>
 
-            {props.allproducts.map(item => <Product image={item.imageUrl} price={item.price} />)}
+                {props.allproducts.map(item => <Product key={item.id} id={item.id} image={item.imageUrl} title={item.title} price={item.price} />)}
+            </div>
+            <div className={classes.bottomcartbtn}>
+                <button >See the Cart</button>
+            </div>
 
         </div>
     )

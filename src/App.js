@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react'
 import Cart from './components/Cart/Cart'
 import Header from './components/header/Header'
 import AllProducts from './components/Products/AllProducts'
+import CartProvider from './components/store/CartProvider'
 
 const App = () => {
 
@@ -9,6 +10,7 @@ const App = () => {
   const productsArr = [
 
     {
+      id: 1,
 
       title: 'Colors',
 
@@ -19,6 +21,7 @@ const App = () => {
     },
 
     {
+      id: 2,
 
       title: 'Black and white Colors',
 
@@ -29,6 +32,7 @@ const App = () => {
     },
 
     {
+      id: 3,
 
       title: 'Yellow and Black Colors',
 
@@ -39,6 +43,7 @@ const App = () => {
     },
 
     {
+      id: 4,
 
       title: 'Blue Color',
 
@@ -51,15 +56,15 @@ const App = () => {
   ]
 
   function cartToggle(bool) {
-    setIsCartShown(bool)
+    setIsCartShown(prevValue => !prevValue)
   }
   return (
-    <Fragment>
-      {isCartShown && <Cart />}
+    <CartProvider>
+      {isCartShown && <Cart onCartClickHandler={cartToggle} />}
 
       <Header onCartClickHandler={cartToggle} />
       <AllProducts allproducts={productsArr} />
-    </Fragment>
+    </CartProvider>
   )
 }
 
