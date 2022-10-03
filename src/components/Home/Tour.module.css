@@ -28,3 +28,7 @@
   color: white;
   border-radius: 10px;
 }
+.btn:hover {
+  cursor: pointer;
+  background-color: #2bbbeb;
+}

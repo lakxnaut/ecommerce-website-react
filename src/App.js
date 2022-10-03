@@ -7,6 +7,7 @@ import CartProvider from './components/store/CartProvider'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './components/Home/Home'
 import About from './components/About/About'
+import Contact from './components/Contact/Contact'
 
 
 
@@ -74,6 +75,7 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/store" element={<AllProducts allproducts={productsArr} onCartClickHandler={cartToggle} />} />
         </Routes>
