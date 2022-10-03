@@ -33,7 +33,7 @@ const Contact = () => {
 
     return (
         <div className={classes.contact}>
-            <form onSubmit={onSubmitHandler}>
+            <form className={classes.myform} onSubmit={onSubmitHandler}>
                 <label>Name</label>
                 <input type='text' ref={nameRef} />
 

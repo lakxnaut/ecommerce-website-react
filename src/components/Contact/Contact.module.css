@@ -1,0 +1,11 @@
+.contact {
+}
+
+.myform {
+  border: 1px solid red;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-wrap: wrap;
+}
