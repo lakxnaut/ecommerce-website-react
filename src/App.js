@@ -10,6 +10,7 @@ import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 import Product from './components/Products/Product'
 import SingleProduct from './components/Products/SingleProduct'
+import Login from './components/Login/Login'
 
 
 
@@ -77,6 +78,8 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<Home />} />
+
+          <Route path='/login' element={<Login />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/store/:productid" element={<SingleProduct />} />

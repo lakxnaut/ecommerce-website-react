@@ -3,28 +3,15 @@ import CartContext from './cart-context'
 
 const CartProvider = (props) => {
 
+    const initialToken = localStorage.getItem('token')
+
     const [myItem, setMyItem] = useState([])
+    const [token, setToken] = useState(initialToken)
 
 
     function addToCartHandler(item) {
 
         setMyItem([...myItem, item])
-
-        // cartContext.item.map(product => {
-
-        //     if (product.id === item.id) {
-
-
-        //         return (setMyItem([...myItem, { quantity: product.quantity++ }]))
-
-
-
-
-
-        //     }
-        //     return (setMyItem([...myItem, item]))
-
-        // })
 
 
 
@@ -34,12 +21,19 @@ const CartProvider = (props) => {
 
     }
 
+    function loginHandler(token) {
+        setToken(token)
+        localStorage.setItem('token', token)
+    }
+
     const cartContext = {
         item: myItem,
         total: 0,
-
+        token: token,
+        login: loginHandler,
         addItem: addToCartHandler,
-        removeItem: removeFromCart
+        removeItem: removeFromCart,
+        isLoggedin: false,
     }
     return (
         <CartContext.Provider value={cartContext}>

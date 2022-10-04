@@ -44,6 +44,8 @@ const Contact = () => {
                 <input type='number' ref={phoneRef} />
                 <button>Submit</button>
 
+                <p></p>
+
             </form>
         </div>
     )
