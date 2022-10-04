@@ -9,7 +9,8 @@ const CartContext = React.createContext({
     quantity: 0,
     token: '',
     login: (token) => { },
-    isLoggedin: false,
+    isLoggedin: false
+
 
 
 })

@@ -39,6 +39,7 @@ const Login = () => {
 
 
             cartCtx.login(token)
+
             Navigate('/store')
 
         }

@@ -7,6 +7,9 @@ const CartProvider = (props) => {
 
     const [myItem, setMyItem] = useState([])
     const [token, setToken] = useState(initialToken)
+    const userLoggedIn = !!token
+
+    console.log(userLoggedIn);
 
 
     function addToCartHandler(item) {
@@ -22,7 +25,7 @@ const CartProvider = (props) => {
     }
 
     function loginHandler(token) {
-        setToken(token)
+        setToken(token);
         localStorage.setItem('token', token)
     }
 
@@ -33,7 +36,7 @@ const CartProvider = (props) => {
         login: loginHandler,
         addItem: addToCartHandler,
         removeItem: removeFromCart,
-        isLoggedin: false,
+        isLoggedin: userLoggedIn,
     }
     return (
         <CartContext.Provider value={cartContext}>
