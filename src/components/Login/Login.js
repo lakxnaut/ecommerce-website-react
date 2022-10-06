@@ -35,10 +35,20 @@ const Login = () => {
         if (resp.ok) {
 
             const data = await resp.json()
+            const email = data.email;
             const token = data.idToken
 
+            const endpoint = `/cart${email.replace(/\.|@/g, '')}`
 
-            cartCtx.login(token)
+
+            console.log(endpoint);
+
+            cartCtx.showItem()
+
+
+            cartCtx.login(token, endpoint)
+
+
 
             Navigate('/store')
 

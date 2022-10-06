@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState } from 'react'
+import React, { Fragment, useContext, useEffect, useState } from 'react'
 import Cart from './components/Cart/Cart'
 import Footer from './components/Footer/Footer'
 import Header from './components/header/Header'
@@ -17,8 +17,20 @@ import CartContext from './components/store/cart-context'
 
 const App = () => {
 
+
+
+
+
   const [isCartShown, setIsCartShown] = useState(false)
   const cartCtx = useContext(CartContext)
+
+  useEffect(() => {
+
+    console.log('useffect');
+    cartCtx.showItem()
+
+  }, [cartCtx.myItem, cartCtx.token])
+
   const productsArr = [
 
     {
@@ -86,7 +98,7 @@ const App = () => {
 
           <Route path='/login' element={<Login />} />
           <Route path="/contact" element={<Contact />} />
-          {console.log(cartCtx.isLoggedin)}
+
           {isLoggedIn && <Route path="/about" element={<About />} />}
           <Route path="/store/:productid" element={<SingleProduct />} />
           {isLoggedIn && <Route path={"/store"} element={<AllProducts allproducts={productsArr} onCartClickHandler={cartToggle} />} />}

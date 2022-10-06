@@ -63,6 +63,12 @@
   background-color: rgb(231, 76, 76);
   border: none;
   padding: 5px 10px;
+  color: white;
+}
+
+.removebutton:hover {
+  cursor: pointer;
+  background-color: rgb(226, 35, 35);
 }
 
 .cartquantity {

@@ -6,9 +6,11 @@ const Product = (props) => {
 
     const cartctx = useContext(CartContext);
 
+
     function addCardHandler() {
 
         cartctx.addItem({ id: props.id, image: props.image, title: props.title, price: props.price, quantity: 1 })
+
 
     }
     return (

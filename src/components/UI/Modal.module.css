@@ -10,7 +10,7 @@
 } */
 
 .modal {
-  position: fixed;
+  position: sticky;
 
   right: 0;
   bottom: 0;

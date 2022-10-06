@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import CartContext from '../store/cart-context'
 import classes from './CartButton.module.css'
 
@@ -6,8 +6,12 @@ const CartButton = (props) => {
 
     const cartctx = useContext(CartContext)
 
+
+
+
     function showCartHandler() {
         props.onCartClickHandler(true)
+
 
     }
 
